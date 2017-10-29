@@ -7,10 +7,12 @@ function start() {
     });
     document.addEventListener("mousedown", function(evt) {
         let mouseY = calculateMouseY(evt);
+        console.log(mouseY);
         if (bulletCount > bulletCap) {
             bulletCount = 0;
         }
         bullets[bulletCount] = new bullet(new utils.Vector2D(0, mouseY-(ig.size.y/2)));
+        bulletCount++;
     });
     b = new bullet(new utils.Vector2D(0, canvas.height/2));
     c = new creepyMsgs.country();
