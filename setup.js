@@ -14,7 +14,7 @@ window.onload = function() {
     document.body.style.margin = "0px 0px 0px 0px";
     document.body.style.overflow = "hidden";
 
-    setInterval(function() {
+    setInterval(() => {
         update();
         draw();
     }, 1000/fps);

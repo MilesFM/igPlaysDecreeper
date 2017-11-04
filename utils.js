@@ -14,13 +14,13 @@ let utils = { // Useful functions/classes that are reused
         }
     },
     
-    drawImage : function(src, x, y, w, h) {
+    drawImage : (src, x, y, w, h) => {
         let img = new Image();
         img.src = src;
         context.drawImage(img, x, y, w, h);
     },
     
-    drawText : function(text, x, y, font, style) {
+    drawText : (text, x, y, font, style) => {
         context.font = font;
         context.fillStyke = style;
         context.textAlign = "center";
