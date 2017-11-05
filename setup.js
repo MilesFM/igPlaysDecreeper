@@ -11,6 +11,7 @@ window.onload = function() {
     context = canvas.getContext("2d");
 
     start();
+    // removes margin and scroll bars
     document.body.style.margin = "0px 0px 0px 0px";
     document.body.style.overflow = "hidden";
 

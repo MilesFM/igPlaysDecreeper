@@ -16,17 +16,29 @@ function start() {
     });
 }
 
+function msgManager() {
+    /*if (msgCount > msgCap) {
+        msgCount = 0;
+    }
+    if (msgs[msgCount].pos.x < canvas.width-25) {
+        msgs[msgCount++] = creepyMsgs.country();
+    }
+
+    for (let i = 0; i < bullets.length; i++) {
+        msgs[i].move();
+    }*/
+}
+
 function update() {
     // If there are too many bullets, let garbage collector take over
     if (bulletCount > bulletCap) {
         bulletCount = 0;
         console.log("Loop over");
     }
-    //console.log(bullets.Length);
     for (let i = 0; i < bullets.length; i++) {
         bullets[i].move();
-        console.log("thing");
     }
+    msgManager();
 }
 
 function draw() {
@@ -38,6 +50,10 @@ function draw() {
 
     for (let i = 0; i < bullets.length; i++) {
         bullets[i].draw();
+    }
+
+    for (let i = 0; i < msgs.length; i++) {
+        msgs[i].draw();
     }
 
     utils.drawImage(ig.src, ig.pos.x, ig.pos.y, ig.size.x, ig.size.y);
