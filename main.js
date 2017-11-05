@@ -6,12 +6,12 @@ function start() {
         ig.pos.y = mouseY;
     });
     document.addEventListener("mousedown", (evt) => {
-        let mouseY = calculateMouseY(evt)-(ig.size.y/2);
+        let mouseY = calculateMouseY(evt);
         console.log(mouseY);
         if (bulletCount > bulletCap) {
             bulletCount = 0;
         }
-        bullets[bulletCount++] = new bullet(new utils.Vector2D(0, mouseY));
+        bullets[bulletCount++] = new bullet(new utils.Vector2D(25, mouseY));
         console.log(bullets.length);
     });
 }
