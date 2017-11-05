@@ -12,22 +12,18 @@ function start() {
             bulletCount = 0;
         }
         bullets[bulletCount++] = new bullet(new utils.Vector2D(0, mouseY));
+        console.log(bullets.length);
     });
-    //b = new bullet(new utils.Vector2D(0, canvas.height/2));
-    //c = new creepyMsgs.country();
-    //c.pos.y = b.pos.y;
 }
 
 function update() {
-    //b.move();
-    //c.move();
-
     // If there are too many bullets, let garbage collector take over
     if (bulletCount > bulletCap) {
         bulletCount = 0;
         console.log("Loop over");
     }
-    for (let i = 0; i < bullets.Length; i++) {
+    //console.log(bullets.Length);
+    for (let i = 0; i < bullets.length; i++) {
         bullets[i].move();
         console.log("thing");
     }
@@ -40,10 +36,7 @@ function draw() {
     context.fillStyle = "red";
     context.fillRect(0, 0, 5, canvas.height);
 
-    //c.draw();
-    //b.draw();
-
-    for (let i = 0; i < bullets.Length; i++) {
+    for (let i = 0; i < bullets.length; i++) {
         bullets[i].draw();
     }
 
