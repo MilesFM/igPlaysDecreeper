@@ -17,16 +17,21 @@ function start() {
 }
 
 function msgManager() {
-    /*if (msgCount > msgCap) {
+    if (msgCount > msgCap) {
         msgCount = 0;
     }
-    if (msgs[msgCount].pos.x < canvas.width-25) {
-        msgs[msgCount++] = creepyMsgs.country();
+
+    if (msgGo >= fps) {
+        msgs[msgCount++] = new creepyMsgs.country();
+        msgGo = 0;
+    } else {
+        msgGo++;
     }
 
     for (let i = 0; i < bullets.length; i++) {
+        if (msgs[i] === undefined) { break; }
         msgs[i].move();
-    }*/
+    }
 }
 
 function update() {

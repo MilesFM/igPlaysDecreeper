@@ -1,4 +1,4 @@
-let utils = { // Useful functions/classes that are reused
+let utils = { // Useful functions/classes that are reused.
     Vector2D : class {
         constructor(x, y) {
             this.x = x;

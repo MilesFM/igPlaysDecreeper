@@ -1,10 +1,10 @@
-let ig; // igPlays gameObject
-let b; // temp
+let ig; // igPlays gameObject.
 
-let bullets = []; // stores all the bullet objects
-let bulletCount = 0; // how many bullets are active
-let bulletCap = 25; // bullet cap
+let bullets = []; // Stores all the bullet objects.
+let bulletCount = 0; // How many bullets are active.
+let bulletCap = 25; // Bullet cap.
 
-let msgs = []; // stores all the message objects
-let msgCount = 0; // how many messages are active
-let msgCap = 40; // message cap
+let msgs = []; // Stores all the message objects.
+let msgCount = 0; // How many messages are active.
+let msgCap = 40; // Message cap.
+let msgGo = 0; // So not too many messages spawn at once.

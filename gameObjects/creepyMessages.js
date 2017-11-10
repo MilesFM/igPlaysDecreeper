@@ -12,10 +12,14 @@ class creepyMessage  {
         this.pos.x -= this.velocityX;
     }
     draw() {
+        if (this.pos.x < 0) {
+            return;
+        }
         utils.drawText(this.message, this.pos.x, this.pos.y+5, "italic 15px arial", this.colour);
     }
 }
 
+// List of creepy messages.
 let creepyMsgs = {
     country : class extends creepyMessage {
         constructor() {
