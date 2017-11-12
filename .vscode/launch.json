@@ -10,6 +10,6 @@
             "request": "launch",
             "sourceMaps": false,
             "file": "${workspaceRoot}/index.html"
-        },
+        }
     ]
 }

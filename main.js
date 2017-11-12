@@ -1,5 +1,6 @@
 function start() {
     //joke();
+
     ig = new utils.gameObject(new utils.Vector2D(25, canvas.height/2-25), new utils.Vector2D(75, 75), "assets/ig.jpg");
     document.addEventListener("mousemove", (evt) => {
         let mouseY = calculateMouseY(evt)-(ig.size.y/2);
@@ -13,6 +14,10 @@ function start() {
         }
         bullets[bulletCount++] = new bullet(new utils.Vector2D(25, mouseY));
         console.log(bullets.length);
+    });
+    document.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     });
 }
 
