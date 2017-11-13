@@ -6,15 +6,7 @@ function start() {
         let mouseY = calculateMouseY(evt)-(ig.size.y/2);
         ig.pos.y = mouseY;
     });
-    document.addEventListener("mousedown", (evt) => {
-        let mouseY = calculateMouseY(evt);
-        console.log(mouseY);
-        if (bulletCount > bulletCap) {
-            bulletCount = 0;
-        }
-        bullets[bulletCount++] = new bullet(new utils.Vector2D(25, mouseY));
-        console.log(bullets.length);
-    });
+    document.addEventListener("mousedown", mouseDown);
     document.addEventListener("resize", () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -33,9 +25,15 @@ function msgManager() {
         msgGo++;
     }
 
-    for (let i = 0; i < bullets.length; i++) {
+    for (let i = 0; i < msgs.length; i++) {
         if (msgs[i] === undefined) { break; }
         msgs[i].move();
+
+        for (let j = 0; j < bullets.length; j++) {
+            if (bullets[j].collision(msgs[i].pos) == true) {
+                msgs[i].dead = true;
+            }
+        }
     }
 }
 
@@ -48,6 +46,7 @@ function update() {
     for (let i = 0; i < bullets.length; i++) {
         bullets[i].move();
     }
+
     msgManager();
 }
 
@@ -67,6 +66,11 @@ function draw() {
     }
 
     utils.drawImage(ig.src, ig.pos.x, ig.pos.y, ig.size.x, ig.size.y);
+}
+
+function gameOver() {
+    utils.drawText("GAME OVER", canvas.width/2, canvas.height/2, "bold 50px arial", "white");
+    clearInterval(gameInterval);
 }
 
 function joke() {

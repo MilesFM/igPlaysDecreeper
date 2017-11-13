@@ -4,15 +4,24 @@ class creepyMessage  {
         this.message = message;
         this.colour = colour;
         this.velocityX = velocityX;
+        this.dead = false;
     }
     move() {
         if (this.pos.x < 0) {
+            //gameOver();
+            return;
+        }
+        if (this.dead) {
             return;
         }
         this.pos.x -= this.velocityX;
     }
     draw() {
         if (this.pos.x < 0) {
+            //gameOver();
+            return;
+        }
+        if (this.dead) {
             return;
         }
         utils.drawText(this.message, this.pos.x, this.pos.y+5, "italic 15px arial", this.colour);

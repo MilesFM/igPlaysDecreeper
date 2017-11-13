@@ -1,5 +1,6 @@
 let canvas;
 let context;
+let gameInterval; // So the game can be stopped
 
 let fps = 30;
 
@@ -15,7 +16,7 @@ window.onload = function() {
     document.body.style.margin = "0px 0px 0px 0px";
     document.body.style.overflow = "hidden";
 
-    setInterval(() => {
+    gameInterval = setInterval(() => {
         update();
         draw();
     }, 1000/fps);
