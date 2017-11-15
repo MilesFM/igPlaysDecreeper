@@ -1,6 +1,5 @@
 function start() {
     //joke();
-
     ig = new utils.gameObject(new utils.Vector2D(25, canvas.height/2-25), new utils.Vector2D(75, 75), "assets/ig.jpg");
     document.addEventListener("mousemove", (evt) => {
         let mouseY = calculateMouseY(evt)-(ig.size.y/2);
@@ -18,7 +17,7 @@ function msgManager() {
         msgCount = 0;
     }
 
-    if (msgGo >= fps) {
+    if (msgGo >= fps*2) {
         msgs[msgCount++] = new creepyMsgs.country();
         msgGo = 0;
     } else {
@@ -29,6 +28,7 @@ function msgManager() {
         if (msgs[i] === undefined) { break; }
         msgs[i].move();
 
+        // If there is a collision, both bullet and message should die.
         for (let j = 0; j < bullets.length; j++) {
             if (bullets[j].collision(msgs[i].pos) == true) {
                 msgs[i].dead = true;

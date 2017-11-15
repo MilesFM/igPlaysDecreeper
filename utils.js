@@ -25,5 +25,15 @@ let utils = { // Useful functions/classes that are reused.
         context.fillStyke = style;
         context.textAlign = "center";
         context.fillText(text, x, y);
+    },
+
+    audio : (src) => {
+        sound = document.createElement("audio");
+        sound.src = src;
+        sound.setAttribute("preload", "auto");
+        sound.setAttribute("controls", "none");
+        sound.style.display = "none";
+        document.body.appendChild(sound);
+        sound.play();
     }
 };

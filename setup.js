@@ -4,7 +4,7 @@ let gameInterval; // So the game can be stopped
 
 let fps = 30;
 
-window.onload = function() {
+window.onload = () => {
     canvas = document.createElement("canvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

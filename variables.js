@@ -8,3 +8,5 @@ let msgs = []; // Stores all the message objects.
 let msgCount = 0; // How many messages are active.
 let msgCap = 40; // Message cap.
 let msgGo = 0; // So not too many messages spawn at once.
+
+let stage = 0;

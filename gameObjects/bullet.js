@@ -20,8 +20,9 @@ class bullet { // Bullet that when hits a message, destroys it.
     }
     collision(msgPos) {
         // Will add functionality in the future so that you don't have to hit dead centre
-        if (msgPos.y == this.pos.y && msgPos.x <= this.pos.x) { 
+        if ((msgPos.y <= this.pos.y || msgPos.y >= this.pos.y) && msgPos.x <= this.pos.x && !this.dead) { 
             this.dead = true;
+            stage++;
             return true;
         }
     }
