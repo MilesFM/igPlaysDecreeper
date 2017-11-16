@@ -1,6 +1,6 @@
 class creepyMessage  {
     constructor(message, colour, velocityX) {
-        this.pos = new utils.Vector2D(canvas.width, (Math.random() * canvas.height-1) + 1);
+        this.pos = new utils.Vector2D(canvas.width, (Math.random() * canvas.height-1) + 5);
         this.message = message;
         this.colour = colour;
         this.velocityX = velocityX;
@@ -17,6 +17,10 @@ class creepyMessage  {
         this.pos.x -= this.velocityX;
     }
     draw() {
+        if (this.pos.x < 0) {
+            gameOver();
+            return;
+        }
         if (this.dead) {
             return;
         }

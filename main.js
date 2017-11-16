@@ -66,10 +66,12 @@ function draw() {
     }
 
     utils.drawImage(ig.src, ig.pos.x, ig.pos.y, ig.size.x, ig.size.y);
+
+    utils.drawText("Stage: " + stage, 10, 20, "20px impact", "red", "start");
 }
 
 function gameOver() {
-    utils.drawText("GAME OVER", canvas.width/2, canvas.height/2, "bold 50px arial", "white");
+    utils.drawText("GAME OVER", canvas.width/2, canvas.height/2, "bold 50px impact", "red");
     clearInterval(gameInterval);
 }
 

@@ -20,10 +20,17 @@ let utils = { // Useful functions/classes that are reused.
         context.drawImage(img, x, y, w, h);
     },
     
-    drawText : (text, x, y, font, style) => {
+    drawText : (text, x, y, font, style, textAlign) => {
         context.font = font;
-        context.fillStyke = style;
-        context.textAlign = "center";
+        context.fillStyle = style;
+
+        // If no origin is set, make it the centre.
+        if (textAlign === undefined) {
+            context.textAlign = "center";
+        } else {
+            context.textAlign = textAlign;
+        }
+
         context.fillText(text, x, y);
     },
 
