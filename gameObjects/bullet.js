@@ -18,9 +18,9 @@ class bullet { // Bullet that when hits a message, destroys it.
         context.fillStyle = "red";
         context.fillRect(this.pos.x, this.pos.y, this.size.x, this.size.y,);
     }
-    collision(msgPos) {
+    collision(msgPos, isDead) {
         // Will add functionality in the future so that you don't have to hit dead centre
-        if ((this.pos.y >= msgPos.y-8 && this.pos.y <= msgPos.y+8) && msgPos.x <= this.pos.x && !this.dead) { 
+        if ((this.pos.y >= msgPos.y-8 && this.pos.y <= msgPos.y+8) && msgPos.x <= this.pos.x && !this.dead && !isDead) { 
             this.dead = true;
             stage += 0.01;
             return true;

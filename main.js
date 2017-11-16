@@ -17,7 +17,7 @@ function msgManager() {
     }
 
     if (msgGo >= fps*2) {
-        msgs[msgCount++] = new creepyMsgs.list[Math.floor(stage)]();
+        msgs[msgCount++] = new creepyMsgs[Math.floor(stage)]();
         msgGo = 0;
     } else {
         msgGo++;
@@ -29,7 +29,7 @@ function msgManager() {
 
         // If there is a collision, both bullet and message should die.
         for (j in bullets) {
-            if (bullets[j].collision(msgs[i].pos) == true) {
+            if (bullets[j].collision(msgs[i].pos, msgs[i].dead) == true) {
                 msgs[i].dead = true;
             }
         }
