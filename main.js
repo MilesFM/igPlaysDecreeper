@@ -16,7 +16,7 @@ function msgManager() {
         msgCount = 0;
     }
 
-    if (msgGo >= fps*2) {
+    if (msgGo >= fps*1.5) {
         msgs[msgCount++] = new creepyMsgs[Math.floor(stage)]();
         msgGo = 0;
     } else {
