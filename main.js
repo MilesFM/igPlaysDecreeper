@@ -18,7 +18,7 @@ function msgManager() {
     }
 
     if (msgGo >= fps*2) {
-        msgs[msgCount++] = new creepyMsgs.country();
+        msgs[msgCount++] = new creepyMsgs.list[Math.floor(stage)]();
         msgGo = 0;
     } else {
         msgGo++;
@@ -67,7 +67,7 @@ function draw() {
 
     utils.drawImage(ig.src, ig.pos.x, ig.pos.y, ig.size.x, ig.size.y);
 
-    utils.drawText("Stage: " + stage, 10, 20, "20px impact", "red", "start");
+    utils.drawText("Stage: " + utils.round(stage, 2), 10, 20, "20px impact", "red", "start");
 }
 
 function gameOver() {

@@ -70,4 +70,48 @@ let creepyMsgs = {
             super("WHERE DOES IG LIVE?!", "red", 8);
         }
     },
+    
+    // So I can cycle through the elements. Not efficent however it works for now.
+    list : [
+        class extends creepyMessage {
+            constructor() {
+                super("Where does ig come from?", "white", 1);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("Where does ig live?", "cyan", 2);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("What is ig's computing?", "blue", 3);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("Can ig subscribe to me?", "purple", 4);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("Can ig and me be friends?", "yellow", 5);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("What does ig look like?", "orange", 6);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("What is ig's full name?", "tomato", 7);
+            }
+        },
+        class extends creepyMessage {
+            constructor() {
+                super("WHERE DOES IG LIVE?!", "red", 8);
+            }
+        },
+    ]
 };
