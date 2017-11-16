@@ -24,7 +24,7 @@ class creepyMessage  {
         if (this.dead) {
             return;
         }
-        utils.drawText(this.message, this.pos.x, this.pos.y+5, "italic 15px arial", this.colour);
+        utils.drawText(this.message, this.pos.x, this.pos.y+5, "italic 15px arial", this.colour, "start");
     }
 }
 

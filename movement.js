@@ -13,4 +13,6 @@ function mouseDown(evt) {
     }
     bullets[bulletCount++] = new bullet(new utils.Vector2D(25, mouseY));
     console.log(bullets.length);
+
+    isJoke = false;
 }

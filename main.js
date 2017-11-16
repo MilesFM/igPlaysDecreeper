@@ -1,5 +1,4 @@
 function start() {
-    //joke();
     ig = new utils.gameObject(new utils.Vector2D(25, canvas.height/2-25), new utils.Vector2D(75, 75), "assets/ig.jpg");
     document.addEventListener("mousemove", (evt) => {
         let mouseY = calculateMouseY(evt)-(ig.size.y/2);
@@ -68,6 +67,10 @@ function draw() {
     utils.drawImage(ig.src, ig.pos.x, ig.pos.y, ig.size.x, ig.size.y);
 
     utils.drawText("Stage: " + utils.round(stage, 2), 10, 20, "20px impact", "red", "start");
+
+    if (isJoke) {
+        joke();
+    }
 }
 
 function gameOver() {
@@ -80,10 +83,7 @@ function joke() {
     context.fillRect(0, 0, canvas.width, canvas.height);
     utils.drawText("The following is meant as a joke.", canvas.width/2, canvas.height/2, "bold italic 40px arial", "red");
 
-    setTimeout(()=>{return;}, 5000);
-
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     utils.drawText("Please do not take this seriously or as a doxxing threat.", canvas.width/2, canvas.height/2, "bold italic 40px arial", "red");
-    setTimeout(()=>{return;}, 5000);
 }

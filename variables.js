@@ -9,4 +9,6 @@ let msgCount = 0; // How many messages are active.
 let msgCap = 40; // Message cap.
 let msgGo = 0; // So not too many messages spawn at once.
 
-let stage = 0;
+let stage = 0; // Current stage the game is at.
+
+let isJoke = true; // If the before screen is up.
