@@ -24,12 +24,12 @@ function msgManager() {
         msgGo++;
     }
 
-    for (let i = 0; i < msgs.length; i++) {
+    for (i in msgs) {
         if (msgs[i] === undefined) { break; }
         msgs[i].move();
 
         // If there is a collision, both bullet and message should die.
-        for (let j = 0; j < bullets.length; j++) {
+        for (j in bullets) {
             if (bullets[j].collision(msgs[i].pos) == true) {
                 msgs[i].dead = true;
             }
@@ -43,7 +43,7 @@ function update() {
         bulletCount = 0;
         console.log("Loop over");
     }
-    for (let i = 0; i < bullets.length; i++) {
+    for (i in bullets) {
         bullets[i].move();
     }
 
@@ -57,11 +57,11 @@ function draw() {
     context.fillStyle = "red";
     context.fillRect(0, 0, 5, canvas.height);
 
-    for (let i = 0; i < bullets.length; i++) {
+    for (i in bullets) {
         bullets[i].draw();
     }
 
-    for (let i = 0; i < msgs.length; i++) {
+    for (i in msgs) {
         msgs[i].draw();
     }
 
