@@ -9,6 +9,7 @@ function start() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+    igSound = new utils.audio("assets/pew.mp3");
 }
 
 function msgManager() {

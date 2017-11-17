@@ -1,4 +1,5 @@
 let ig; // igPlays gameObject.
+let igSound; // Stores the pew sound.
 
 let bullets = []; // Stores all the bullet objects.
 let bulletCount = 0; // How many bullets are active.

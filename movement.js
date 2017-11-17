@@ -15,4 +15,6 @@ function mouseDown(evt) {
     console.log(bullets.length);
 
     isJoke = false;
+
+    igSound.play();
 }
