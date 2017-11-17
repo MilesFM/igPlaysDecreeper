@@ -42,7 +42,7 @@ let creepyMsgs = [
     },
     class extends creepyMessage {
         constructor() {
-            super("What is ig's computing?", "blue", 3);
+            super("What is ig's computing power?", "blue", 3);
         }
     },
     class extends creepyMessage {
