@@ -5,7 +5,8 @@ function start() {
         ig.pos.y = mouseY;
     });
     document.addEventListener("mousedown", mouseDown);
-    document.addEventListener("resize", () => {
+    window.addEventListener("resize", () => {
+        console.log("Resize");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
