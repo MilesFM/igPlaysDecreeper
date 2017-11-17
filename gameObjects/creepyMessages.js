@@ -70,8 +70,10 @@ let creepyMsgs = [
             super("WHERE DOES IG LIVE?!", "red", 8);
         }
     },
-    () => { // Make sure this is the last element
-        utils.drawText("YOU WIN!", canvas.width/2, canvas.height/2, "bold 50px impact", "red");
-        clearInterval(gameInterval);
+    class { // Make sure this is the last element
+        constructor() {
+            utils.drawText("YOU WIN!", canvas.width/2, canvas.height/2, "bold 50px impact", "red");
+            clearInterval(gameInterval);
+        }
     }
 ]
